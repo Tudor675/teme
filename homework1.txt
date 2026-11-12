@@ -1,0 +1,10 @@
+1)Harvard: Advantage:Faster processing speed; Disadvantage: complex design with more hardware needed;Use:-microcontrollers;
+Risc: Advantage:simple instructions, fast execution; Disadvantage:requires way more instructions than Harvard and Von Neumann;Use-smartphones;
+2)For windows Ex: C:/directory/file.txt
+  For linux: ~/directory/file
+3)https://www.w3schools.com/cpp/default.asp
+4)Arduino, Raspberry Pi-C++
+  STM32-C
+5)Python,HTML,CSS
+6)GPT-6 Astra-can create models in Blender
+  Claude, Github Copilot, JetBrains AI Assistant- code generation

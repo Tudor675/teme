@@ -1,0 +1,65 @@
+1)Convert:
+347:8-> r=3
+83:8-> r=3
+3:8 -> r=5 
+=> 347 in base 8 is 533
+
+2755:16-> r=3
+172:16-> r=12=C
+10:16=0 -> r=10=A
+=> 2755 in base 16 is AC3
+
+20:2 -> r=0
+10:2 -> r=0
+5:2 -> r=1
+2:2 -> r=0
+1:2 -> r=1
+=> 20 in base 2 is 10100
+
+2)Convert the numbers in base 10
+1000101=> 1x2^6+0x2^5+0x2^4+0x2^3+1x2^2+0x2^1+1x2^0 =64+4+1=69
+357=3x8^2+5x8^1+7x8^0=192+40+7=239
+C7A=12x16^2+7x16^1+10x16^0=3074+112+10=3194
+
+3)Calculate:
+FA+23 in base 16 is: F+2=15+2 =17=11 in base 16
+                     A+3=10+3 =13=D in base 16 => FA+23= 11D
+
+ 1101 0010+    in base 2
+ 1110 1101=
+110111111
+ 
+1176-      in base 8 
+ 723
+  53
+since 11-7 is in base 8, 11 in base 8 is 9 => 9-7=2 
+=> answer is 253
+
+4)Convert:
+10101010.110010:
+base8:010101010=252 - added 1 zero to the right
+      110010=62  
+      =>252.62
+base16:10101010=AA 
+       11001000=C8 - added 2 zeros to the right
+       =>AA.C8
+
+1100010.11101:
+base8:001100010= - added 2 zeros to the left
+      111010=72     - 1 zero to the right
+      =>142.72
+base16:01100010=62  - added 1 zero to the left
+       11101000=E8   - addded 3 zeros to the right  
+       =>62.E8
+
+5)Convert 175.1285 in base 4
+       175:4 r=3
+       43:4  r=3
+       10:4  r=2
+       2:4   r=2
+       =>2233 in base 4
+       1285x4=514     0
+       514x4=2.056    2
+       056x4=224      0
+       224x4=896      0
+ => 175.1285 = 2233.0200

@@ -1,0 +1,26 @@
+/* 
+program that reads an integer from the console and performs with it:
+multiplication, division modulo, bitwise XOR, bitwise AND
+*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main( ){
+    int a,b,c; //s-semi-perimeter, ar-area
+    float s, ar;
+    printf("Enter an integer value for all the 3 sides of a triangle: ");
+    scanf("%d %d %d",&a,&b,&c);
+    if(a>0 && b>0 && c>0 && a+b>c && a+c>b && b+c>a){
+        printf("The triangle is valid\n");
+        s=(a+b+c)/2.0; //mathematic formula for the semi-perimeter
+        ar = sqrt(s*(s-a)*(s-b)*(s-c)); //mathematic formula for the area
+        printf("The values of the sides of the triangle are: %d, %d, %d\n", a, b, c);
+        printf("Its area is: %-10.2f\n", ar);
+    }
+    else{
+
+        printf("The values %d, %d, %d cannot form an triangle\n", a, b, c);
+    }
+    return 0;
+}

@@ -1,0 +1,274 @@
+//Homework Chirila Tudor Andrei
+//Problem 1
+//program that calculates the equivalent series and parallel resistance of two resistors
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototypes
+float series(int r1, int r2);
+float paralel(int r1, int r2);
+
+int main(){
+    //local declarations
+    int r1, r2;
+    //reading resistor values 
+    scanf("%d", &r1);
+    scanf("%d", &r2);
+    //printing the values
+    printf("%10.3f\n", series(r1, r2));
+    printf("%10.3f\n", paralel(r1, r2));
+    return 0;
+}
+
+//Function definition
+
+float series(int r1, int r2){
+    return r1 + r2; //sum of resistances in series
+}
+
+float paralel(int r1, int r2){
+    return (float)(r1 * r2) / (r1 + r2); //equivalent parallel resistance formula with explicit float casting
+}
+
+
+//Problem 2
+//program that calculates the equivalent series and parallel capacitance of two capacitors
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototypes
+float series(int c1, int c2);
+float paralel(int c1, int c2);
+
+int main(){
+    //local declarations
+    int c1, c2;
+    scanf("%d", &c1);
+    scanf("%d", &c2);
+    printf("%-10.4f %-10.4f\n", paralel(c1, c2), series(c1, c2));
+    return 0;
+}
+
+//Function definition
+float series(int c1, int c2){
+    return (float)(c1 * c2) / (c1 + c2); //formula
+}
+
+float paralel(int c1, int c2){
+    return (float)(c1 + c2); //formula
+}
+//Problem 3
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+//function prototypes
+float hypotenuse(int a, int b);
+float perimeter(int a, int b, float hyp);
+
+int main(){
+    //local declarations
+    int a,b;
+    printf("Enter cathether 1: ");
+    scanf("%d", &a);//reading of 1 cathether
+    printf("Enter cathether 2: ");
+    scanf("%d", &b);//reading of 1 cathether
+    float hyp = hypotenuse(a,b);
+    printf("Hypotenuse: %f\n", hyp);// hypotenuse value
+    printf("Perimeter: %f\n", perimeter(a, b, hyp));//printing of perimeter
+    return 0;
+}
+//function for hypotenuse of two numbers
+float hypotenuse(int a, int b){
+    return (float)sqrt(a*a + b*b);
+}
+
+//function for perimeter of triangle
+float perimeter(int a, int b, float hyp){
+    return a+b+hyp;
+}
+
+//Problem 4
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+
+int main(){
+    //local declarations
+    int a,b;
+    printf("The equation is ax+b=0\n");
+    printf("Enter value a: ");
+    scanf("%d", &a);//reading of 1 number
+    printf("Enter value b: ");
+    scanf("%d", &b);//reading of 1 number
+    float x=(float)(-b)/a;
+    printf("The solution of ax+b=0 is: %f", x);
+    return 0;
+}
+
+
+//Problem 5 
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+
+//function declarations
+float sum(int a, int b);//sum fucntion
+float multipersum(int a, int b);//multipersum function
+
+
+int main(){
+    //local declarations
+    int c1,c2,r1,r2;
+    printf("Enter capacitor 1 value: ");
+    scanf("%d", &c1);//reading of c1
+    printf("Enter capacitor 2 value: ");
+    scanf("%d", &c2);//reading of c2
+    printf("The series capacitance is: %-10.4f and parallel capacitance is: %-10.4f\n", multipersum(c1, c2), sum(c1, c2));
+    printf("Enter resistor 1 value: ");
+    scanf("%d", &r1);//readig of r1
+    printf("Enter resistor 2 value: ");
+    scanf("%d", &r2);//reading of r2
+    printf("The series resistance is: %10.3f\n",sum(r1,r2));
+    printf("The parallel resistance is: %10.3f\n", multipersum(r1,r2));
+}
+//function for sum of two numbers
+float sum(int a, int b){
+    return a+b;  
+}
+
+//function for multiplication of two numbers over their sum
+float multipersum(int a, int b){
+    return (float) (a*b)/(a+b);
+}
+//Problem 5 updated variant
+//Chirila Tudor Andrei
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+float sum(int a, int b);//sum fucntion
+float multipersum(int a, int b);//multipersum function
+
+
+int main(){
+    int c,d,e;
+    printf("Enter value 1: ");
+    scanf("%d", &c);//reading of c1
+    printf("Enter value 2: ");
+    scanf("%d", &d);//reading of c2
+    printf("What do you want to find out, resistance or capacitance(1 for resistance or 2 for capacitance): ");
+    scanf("%d", &e);
+    if(e==2)
+        printf("The series capacitance is: %-10.4f and parallel capacitance is: %-10.4f\n", multipersum(c, d), sum(c, d));
+    
+    else if(e==1){
+        printf("The series resistance is: %10.3f\n",sum(c,d));
+        printf("The parallel resistance is: %10.3f\n", multipersum(c,d));}
+    else
+        printf("Input not in range\n");
+}
+//function for sum of two numbers
+float sum(int a, int b){
+    return a+b;  
+}
+
+//function for multiplication of two numbers over their sum
+float multipersum(int a, int b){
+    return (float) (a*b)/(a+b);
+}
+
+//Problem6
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+    //variable declaration
+    char namea[20];
+    char nameb[20];
+    float ma,mb;
+    printf("The name of student a is %s: ", namea);
+    scanf("%s", namea);  //reading the name of a
+    printf("Enter the mark of student a: ");
+    scanf("%f", &ma);//reading the mark of a
+    printf("The name of student b is %s: ", nameb);
+    scanf("%s", nameb);//reading the name of b
+    printf("Enter the mark of student b: ");
+    scanf("%f", &mb);//reading the mark of b
+    printf("Student %20s has the mark %.2f\n", namea, ma); //final results printing
+    printf("Student %-20s has the mark %.2f\n", nameb, mb);
+    return 0;
+}
+
+//Problem7
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    //local declarations
+    int r; //r=radius
+    printf("Enter the radius of your desired circle: ");
+    scanf("%d", &r);
+    float l =(float)(2*M_PI*r); //l=length of circle formula
+    printf("Length of circle is: %10.3f\n", l);
+    float area = M_PI * r * r; //area of circle formula
+    printf("Area of circle is: %10.3f", area);
+    return 0;
+}
+
+//Problem8
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+    //local declaration
+    int hourd, minuted, houra, minutea;
+    printf("Enter departure time in this format: hour and minutes: ");
+    scanf("%d %d", &hourd, &minuted);
+    printf("Enter arrival time in this format: hour and minutes: ");
+    scanf("%d %d", &houra, &minutea);
+    int hourtravel = houra - hourd; //hour calculation
+    int minutetravel = minutea - minuted; //minutes calculation
+    if(hourd < 0 || hourd > 23 || minuted < 0 || minuted > 59 || houra < 0 || houra > 23 || minutea < 0 || minutea > 59) {
+        printf("Invalid time input(hour<24 and minute<60)");
+        return 1; 
+    }//mandatory if statement to check if the input is in real range, else it exites the program
+    if(minutetravel < 0){
+        minutetravel = minutetravel + 60;
+        hourtravel = hourtravel - 1;
+    }//minutes logic calculation
+    if(hourtravel < 0)
+        hourtravel = hourtravel + 24;//hour logic calculation
+    
+    printf("Duration of the trip is : %d hours and %d minutes", hourtravel, minutetravel);
+    return 0;
+}
+//Problem9
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+    //local declarations
+    int v1,v2, distance=100;
+    printf("Enter two speeds for the cars: ");
+    scanf("%d %d", &v1, &v2);
+    float time = distance*60.0/(v1+v2); //formula for determining the time that passed
+    printf("Time to pass until the cars meet: %f minutes", time);
+    return 0;
+}

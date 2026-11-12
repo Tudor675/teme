@@ -1,0 +1,159 @@
+//Homework Chirila Tudor Andrei
+//Problem 1 
+//program that determines the average value of 3 non-integer numbers, and 3 integer numbers
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+
+//Function prototypes
+float avf(float a, float b, float c);
+float avi(int ai, int bi, int ci);
+
+
+int main() {
+//local declarations
+    float a = 8.5;
+    float b = 7.25;
+    float c = 6.30;
+    int ai = 7;
+    int bi = 9;
+    int ci =10;
+    //printing the values to terminal while calling the function
+    printf("The average of the floats is: %f\n", avf(a,b,c));
+    printf("The average of the integers is: %f\n", avi(ai,bi,ci));
+return 0;
+}
+//Function definition
+
+//function that computes 3 fractional numbers and the result is a fractional number
+float avf(float a, float b, float c){
+	float avgf=(a+b+c)/3;  //avgf= average of floats
+    return avgf;
+}
+
+//function that computes 3 integers and the result is a fractional number
+float avi(int ai, int bi, int ci){
+	float avgi=(ai+bi+ci)/3.0;  //avgi=average of integers
+    return avgi;
+  }
+
+
+//Problem 2
+//program that determines the geometric average of 2 integers
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+
+//Function prototype
+float ga(int a, int b);
+
+
+int main() {
+	//local declarations
+    int a = 7;
+    int b = 9;
+    //printing the values to terminal while calling the function
+    printf("The geometric average is: %f\n", ga(a,b));
+return 0;
+}
+//Function definition
+
+//function that computes the geometric average of 2 integers
+float ga(int a, int b){
+	float gaf=sqrt(a*b);    //gaf=geometric average float
+    return gaf;
+  }
+
+//Problem6
+//program that defines simbolic constants of different types
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int valueI = 250;
+    const double valueD = 2.752313131242142141;
+    const char valueC = 'A';
+
+    cout <<"Integer:" << valueI << endl;
+    cout <<"Double:" << valueD << endl;
+    cout <<"Char" << valueC << endl;
+
+    return 0;
+}
+
+
+//Problem5
+//program that calculates the weighted sums of 3 values with weights summing 1
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main() {
+    //3 integer values
+    int val1 = 5;
+    int val2 = 10;
+    int val3 = 15;
+
+    //weights
+    float w1 = 0.2;
+    float w2 = 0.3;
+    float w3 = 0.5;
+
+
+    // Calculated weighted sum
+    float weightedSum = (val1 * w1) + (val2 * w2) + (val3 * w3);
+
+    //results
+    printf("Integer values: %d, %d, %d\n", val1, val2, val3);
+    printf("The weights: %f, %f, %f\n", w1, w2, w3);
+    printf("Weighted Sum: %f\n", weightedSum);
+
+    return 0;
+}
+
+
+//Problem 7
+//program that displays the value of 1/a + 1/b + 1/c while they are floats and then integers.
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+
+//Function prototypes
+float sumf(float a, float b, float c);
+float sumi(int ai, int bi, int ci);
+
+
+int main() {
+//local declarations
+    float a = 8.5;
+    float b = 7.25;
+    float c = 6.30;
+    int ai = 7;
+    int bi = 9;
+    int ci =10;
+    //printing the values to terminal while calling the function
+    printf("The result for float values: %f\n", sumf(a,b,c));
+    printf("The result for integer values: %f\n", sumi(ai,bi,ci));
+return 0;
+}
+//Function definition
+
+//function that computes the sum of 1/a +1/b+1/c while a,b,c are flaots
+float sumf(float a, float b, float c){
+	float fvalue = 1/a + 1/b + 1/c;    //fvalue=float value
+    return fvalue; 
+}
+
+//function that computes the sum of 1/ai +1/bi+1/ci while ai,bi,ci are integers
+float sumi(int ai, int bi, int ci){
+    float ivalue=1.0/ai + 1.0/bi + 1.0/ci;  //ivalue=integer value
+    return ivalue;
+  }
