@@ -1,3 +1,4 @@
+//Chirila Tudor Andrei
 /* 
 program that reads an integer from the console and performs with it:
 multiplication, division modulo, bitwise XOR, bitwise AND
