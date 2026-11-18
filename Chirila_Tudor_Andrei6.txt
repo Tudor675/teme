@@ -1,0 +1,93 @@
+//Problem 1
+/* program that computes the area and checks if the diagonal  is equal with c with a precision of 2 digits*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+int main( ){
+    int a,b,c;
+    const float eps = 0.01;
+    printf("Enter three integers: ");
+    scanf("%d %d %d", &a, &b, &c);// reading of variables
+    float area=(float)a * b; //area formula
+    float diag= sqrt((float) a*a + (float) b*b);//diag formula
+    printf("Area of rectangle: %.2f\n", area);
+    float difference = fabs(diag - c);
+    if(difference < eps){
+        printf("The diagonal is equal with c.\n");
+    } else {
+        printf("The diagonal is not equal to c.\n");
+    }
+    return 0;   
+}
+//Problem 2
+//program that checks if a number is a perfect square
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+int is_integer(float nmb);
+
+int main( ){
+    int a;
+    scanf("%d", &a);
+        if(a>= 0 && is_integer(sqrt(a)))
+            printf("the number is a perfect square");
+        
+    }
+
+int is_integer(float  nmb){ 
+    return floor(nmb) == ceil(nmb);
+    }//function that checks if a number is an integer
+
+//Problem 3
+//program that calculates a at the power of n
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(){
+    int a=5,n;
+    printf("Enter the power n: ");
+    scanf("%d",&n);
+    int result=1;
+    for(int i=0;i<n;i++){
+        result=result*a;
+    }
+    printf("%d to the power of %d is %d",a,n,result);
+}
+
+//Problem 4
+//program that calculates n factorial
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(){
+    int n;
+    printf("Enter an integer: ");
+    scanf("%d",&n);
+    int result=1;
+    for(int i=1;i<=n;i++){
+        result=result*i;
+    }
+    printf("%d! = %d",n,result);
+}
+
+
+
+//Problem 14 
+//program that reads n numbers and shows the one that divide to 3
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(){
+    int a,n;
+    printf("enter how many numbers to insert: ");
+    scanf("%d", &n);
+    for(int i=0;i<n;i++)
+    {
+        printf("enter a number: ");
+        scanf("%d", &a);
+        if(a%3==0)
+            printf("%d divides to 3\n", a);
+    
+    }
+
+    return 0;
+}
+
+

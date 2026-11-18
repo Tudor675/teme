@@ -1,0 +1,155 @@
+
+//Chirila Tudor Andrei
+//Problem 1
+//Program that computes the value of a 3rd degree polynomial in a point x
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+float pol(float a, float b, float c, float d, float x);
+
+int main( ){
+    float a, b, c, d, x;
+    printf("Enter the value of the coefficients a, b, c, d: ");
+    scanf("%f %f %f %f", &a, &b, &c, &d);
+    printf("Enter the value of x: ");
+    scanf("%f", &x);
+    printf("P(%.2f) = %.2f\n", x, pol(a, b, c, d, x));
+    return 0;
+}
+
+float pol(float a, float b, float c, float d, float x){
+    return ((a * x + b) * x + c) * x + d;
+}
+
+//Problem 2
+//Program that reads the 3 sides of a triangle, checks if it is a triangle and calculates the area
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main( ){
+    int a, b, c;
+    float s, ar;
+    printf("Enter an integer value for all the 3 sides of a triangle: ");
+    scanf("%d %d %d", &a, &b, &c);
+    if(a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a){
+        printf("The triangle is valid\n");
+        s = (a + b + c) / 2.0;
+        ar = sqrt(s * (s - a) * (s - b) * (s - c));
+        printf("The values of the sides of the triangle are: %-10.2f %-10.2f %-10.2f\n", (float)a, (float)b, (float)c);
+        printf("Its area is: %-10.2f\n", ar);
+    }
+    else{
+        printf("The values %d, %d, %d cannot form a triangle\n", a, b, c);
+    }
+    return 0;
+}
+
+//Problem 3
+//Program that prints the binary digits of an unsigned char using >> and %
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main( ){
+    unsigned char v;
+    int val, i;
+    printf("Enter an unsigned char value (0-255): ");
+    scanf("%d", &val);
+    v = val;
+    printf("Binary representation of %d: ", val);
+    for(i = 7; i >= 0; i--){
+        printf("%d", (v >> i) % 2);
+    }
+    printf("\n");
+    return 0;
+}
+
+//Problem 5
+//Program that displays the number of significant zeroes from the binary representation
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main( ){
+    unsigned int x;
+    int i, top = -1, zeros = 0;
+    printf("Enter an integer: ");
+    scanf("%d", &x);
+    for(i = 31; i >= 0; i--)
+        if((x >> i) & 1){
+            top = i;
+            break;
+        }
+    if(top == -1)
+        zeros = 1;
+    for(i = top; i >= 0; i--){
+        if(((x >> i) & 1) == 0)
+            zeros++;
+    }
+    printf("Number of significant zeroes: %d\n", zeros);
+    return 0;
+}
+
+//Problem 6
+//Program that displays the value of each byte of an integer
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main( ){
+    int x;
+    printf("Enter an integer: ");
+    scanf("%d", &x);
+
+    printf("Byte 0: %u\n", (unsigned char)x);
+    printf("Byte 1: %u\n", (unsigned char)(x >> 8));
+    printf("Byte 2: %u\n", (unsigned char)(x >> 16));
+    printf("Byte 3: %u\n", (unsigned char)(x >> 24));
+
+    return 0;
+}
+
+//Problem 8
+//Program that converts lowercase characters to uppercase 
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main( ){
+    int n, i;
+    char c;
+    printf("number of characters: ");
+    scanf("%d", &n);
+    for(i = 0; i < n; i++){
+        printf("Enter a lowercase character: ");
+        scanf(" %c", &c);
+        printf("%c (arithmetic), %c (mask)\n", c - 32, c & 0xDF);
+    }
+    return 0;
+}
+
+//Problem 9
+//Program that computes the area of a circle  or of a rectangle 
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main( ){
+    int a, b;
+    float area;
+    printf("Enter 2 integer values: ");
+    scanf("%d %d", &a, &b);
+    if(a == b){
+        area = M_PI * a * a;
+        printf("Area of circle: %-10.2f\n", a, b, area);
+    }
+    else{
+        area = a * b;
+        printf("Area of rectangle: %-10.2f\n", a, b, area);
+    }
+    return 0;
+}
