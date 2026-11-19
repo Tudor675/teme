@@ -1,0 +1,36 @@
+//Homework Chirila Tudor Andrei
+//Problem 8
+//Calculate the product of 2 integer numbers using additions of the first number given by the second one
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int product(int a, int b);
+
+int main(void) {
+//local declarations
+    int a, b;
+    //reading two numbers from KB
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    //printing the product while calling the function
+    printf("The product of %d and %d is: %d\n", a, b, product(a, b));
+    return 0;
+}
+
+//Function definition
+
+//function that computes product of two numbers using repeated addition
+int product(int a, int b) {
+//local declaration
+    int result = 0; //result initialization
+    //loop adding a, b times
+    for (int i = 0; i < b; i++) {
+        result += a;
+    }
+    return result;
+}

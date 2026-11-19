@@ -1,0 +1,26 @@
+//Homework Chirila Tudor Andrei
+//Problem 9
+//program that determines the integer quotient of 2 integer numbers introduced from the KB using a series of subtractions
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int a, b, count = 0; //count=quotient
+    //reading two numbers from KB
+    printf("Enter 2 integer numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    //subtraction loop to compute integer quotient
+    while (a >= b) {
+        a -= b;
+        count++;
+    }
+
+    //printing integer quotient to terminal
+    printf("The integer quotient is: %d\n", count);
+    return 0;
+}

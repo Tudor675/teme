@@ -68,6 +68,185 @@ int main(){
     printf("%d! = %d",n,result);
 }
 
+//Problem5
+//program that reads a number from the KB and finds its greatest prime number and displays all the prime numbers smaller than it
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int isprime(int n);  //function that checks if a number is prime
+   
+
+int main(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for(int i=n-1;i>=2;i--){ //loop that takes the number in decreasing order and when it finds the first prime number it displays it and stops
+        if(isprime(i)){
+            printf("The biggest prime factor of %d is: %d\n", n, i);
+            break;
+        }
+    }
+    printf("all prime factors smaller than %d are: ", n);
+    for(int i=2;i<n;i++){ //loop that takes all the prime numbers smaller than the number n
+        if(isprime(i))
+            printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+
+int isprime(int n){
+    if(n<2){
+        return 0;
+    }
+    for(int d=2;d<n;d++){
+        if(n%d==0){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+//Problem6
+//program that determines the Greatest Common Divider (GCD) of two numbers
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int gcd(int a, int b);
+
+int main(){
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    printf("The GCD of %d and %d is: %d", a, b, gcd(a, b));
+    return 0;
+}
+
+int gcd(int a, int b){
+    int  r;
+    while(b != 0){    //euclid algorithmm
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
+//Problem7
+//program that determines all the divisors of a value introduced from the keyboard
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int divs(int n);
+
+int main(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    divs(n); //function calling
+    return 0;
+}
+
+int divs(int n) {
+    printf("The divisors of %d are: ", n);
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0)
+            printf("%d ", i);
+    }  //divisors finding
+    printf("\n");
+    return 0;
+}
+
+//Problem8
+//Calculate the product of 2 integer numbers using additions of the first number given by the second one
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int product(int a, int b);
+
+int main(){
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    printf("The product of %d and %d is: %d", a, b, product(a, b));
+    return 0;
+}
+
+int product(int a, int b){
+    int result = 0;
+    for(int i = 0; i < b; i++){
+        result += a;
+    }
+    return result;
+}
+
+//Problem9
+//program that determines the integer quotient of 2 integer numbers introduced from the KB using a series of subtractions
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(){
+    int a,b, count=0;
+    printf("Enter 2 integer numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    while(a>=b){
+        a-=b;
+        count++;
+    }
+    printf("The integer quotient is: %d\n", count);
+    return 0;
+}
+
+//Problem10
+//program that checks the number of figures of a number read from the KB
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(){
+    int n,count=0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n == 0)
+        count = 1;
+    while(n!=0){
+        count++;
+        n/=10;
+    }
+    printf("The number of figures is: %d\n", count);
+    return 0;
+}
+
+
+
+//Problem 13
+//program that determines the Least Common Multiple (LCM) of two numbers
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int lcm(int a, int b);
+
+int main(){
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b); 
+    printf("The LCM of %d and %d is: %d", a, b, lcm(a, b));
+    return 0;
+}
+
+int lcm(int a, int b){
+    int c = a, d = b, r;
+    while(d != 0){    //euclid algorithmm 
+        r = c % d;
+        c = d;
+        d = r;
+    }
+    return a/c* b;  
+}
+
 
 
 //Problem 14 

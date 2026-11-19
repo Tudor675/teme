@@ -1,0 +1,29 @@
+//Homework Chirila Tudor Andrei
+//Problem 10
+//program that checks the number of figures of a number read from the KB
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int n, count = 0; //count=number of figures
+    //reading number from KB
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    //if number is 0 it has 1 figure
+    if (n == 0) {
+        count = 1;
+    }
+    //loop dividing by 10 to count figures
+    while (n != 0) {
+        count++;
+        n /= 10;
+    }
+
+    //printing the number of figures to terminal
+    printf("The number of figures is: %d\n", count);
+    return 0;
+}

@@ -1,0 +1,35 @@
+//Homework Chirila Tudor Andrei
+//Problem 1
+//program that computes the area and checks if the diagonal is equal with c with a precision of 2 digits
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+//local declarations
+    int a, b, c;
+    const float eps = 0.01f;
+
+    //reading of variables from KB
+    printf("Enter three integers: ");
+    scanf("%d %d %d", &a, &b, &c); // reading of variables
+
+    //calculating area and diagonal
+    float area = (float)a * b; // area formula
+    float diag = sqrt((float)a * a + (float)b * b); // diag formula
+
+    //printing the area to terminal
+    printf("Area of rectangle: %.2f\n", area);
+
+    //checking if diagonal is equal with c
+    float difference = fabs(diag - c);
+    if (difference < eps) {
+        printf("The diagonal is equal with c.\n");
+    } else {
+        printf("The diagonal is not equal to c.\n");
+    }
+
+    return 0;
+}

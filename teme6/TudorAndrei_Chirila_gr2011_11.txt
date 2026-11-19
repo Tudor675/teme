@@ -1,0 +1,27 @@
+//Homework Chirila Tudor Andrei
+//Problem 11
+//program that reads from the keyboard n integer numbers, displays all the odd numbers and stores them in an array
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+//local declarations
+    int n,x,c=0; //c=count of odd numbers
+    //reading the number of integers from KB
+    printf("Enter the number of integers to be read: ");
+    scanf("%d", &n);
+    int arr[n]; //array declaration
+    printf("Enter %d integers:\n", n);
+    //loop reading integers and storing odd numbers
+    for(int i = 0; i < n; i++){
+        scanf("%d", &x);   
+        if(x % 2 != 0){  //condition to be odd
+            printf("%d is odd\n", x);
+            arr[c] = x;  //every odd number found stored in a array
+            c++;
+            }
+        }
+    return 0;
+}

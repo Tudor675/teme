@@ -1,0 +1,37 @@
+//Homework Chirila Tudor Andrei
+//Problem 7
+//program that determines all the divisors of a value introduced from the keyboard
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int divs(int n);
+
+int main(void) {
+//local declarations
+    int n;
+    //reading number from KB
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    //calling function to display divisors
+    divs(n); // function calling
+    return 0;
+}
+
+//Function definition
+
+//function that finds and displays all divisors of n
+int divs(int n) {
+    printf("The divisors of %d are: ", n);
+    //loop checking all numbers from 1 to n for divisibility
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    } // divisors finding
+    printf("\n");
+    return 0;
+}

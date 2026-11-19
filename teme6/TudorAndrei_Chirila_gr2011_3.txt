@@ -1,0 +1,25 @@
+//Homework Chirila Tudor Andrei
+//Problem 3
+//program that calculates a at the power of n
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int a = 5, n;
+    //reading the power n from KB
+    printf("Enter the power n: ");
+    scanf("%d", &n);
+
+    int result = 1; //result initialization
+    //loop that calculates power by repeated multiplications
+    for (int i = 0; i < n; i++) {
+        result = result * a;
+    }
+
+    //printing the result to terminal
+    printf("%d to the power of %d is %d\n", a, n, result);
+    return 0;
+}

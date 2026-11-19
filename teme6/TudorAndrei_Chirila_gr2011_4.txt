@@ -1,0 +1,25 @@
+//Homework Chirila Tudor Andrei
+//Problem 4
+//program that calculates n factorial
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int n;
+    //reading integer from KB
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    int result = 1; //result initialization
+    //loop that multiplies numbers from 1 to n
+    for (int i = 1; i <= n; i++) {
+        result = result * i;
+    }
+
+    //printing factorial result to terminal
+    printf("%d! = %d\n", n, result);
+    return 0;
+}

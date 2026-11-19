@@ -1,0 +1,28 @@
+//Homework Chirila Tudor Andrei
+//Problem 15
+//program that reads a single character from the kb and it displays that character n times in a row on n rows
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+//local declarations
+    int n;
+    char c;
+    //read character to be displayed
+    printf("Enter a character: ");
+    scanf("%c", &c);
+    //read number for rows and columns
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("The character %c is displayed on %d rows like this: \n", c, n);
+    //nested loops to display character on n rows and n columns
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            printf(" %c ", c); 
+        }
+        printf("\n");
+    }
+    return 0;
+}

@@ -1,0 +1,26 @@
+//Homework Chirila Tudor Andrei
+//Problem 12
+//program that reads from the KB an int r, reads a series of real numbers until their sum is greater than r
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+//local declarations
+    int r,c=0; //c=count of numbers
+    //reading value r from KB
+    printf("Enter a value for r: ");
+    scanf("%d", &r);
+    float a,sum=0; //sum initialization
+    //loop reading real numbers until their sum is greater than r
+    while(sum<=r){
+        printf("Enter a real number: ");
+        scanf("%f", &a);
+        sum+=a;
+        c++;
+    }
+    //printing sum and count to terminal
+    printf("The sum is: %.2f\n", sum);
+    printf("The number of integers read is: %d\n", c);
+}

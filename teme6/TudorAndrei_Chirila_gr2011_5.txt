@@ -1,0 +1,53 @@
+//Homework Chirila Tudor Andrei
+//Problem 5
+//program that reads a number from the KB and finds its greatest prime number and displays all the prime numbers smaller than it
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int isprime(int n); // function that checks if a number is prime
+
+int main(void) {
+//local declarations
+    int n;
+    //reading number from KB
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    //loop that takes the number in decreasing order and when it finds the first prime number it displays it and stops
+    for (int i = n - 1; i >= 2; i--) {
+        if (isprime(i)) {
+            printf("The biggest prime number smaller than %d is: %d\n", n, i);
+            break;
+        }
+    }
+
+    //loop that takes all the prime numbers smaller than the number n
+    printf("All prime numbers smaller than %d are: ", n);
+    for (int i = 2; i < n; i++) {
+        if (isprime(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+
+//Function definition
+
+//function that checks if a number is prime
+int isprime(int n) {
+    if (n < 2) { //numbers smaller than 2 are not prime
+        return 0;
+    }
+    //loop checking divisors
+    for (int d = 2; d < n; d++) {
+        if (n % d == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}

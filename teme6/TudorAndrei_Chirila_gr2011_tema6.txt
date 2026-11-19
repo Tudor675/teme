@@ -1,0 +1,483 @@
+//Entire Homework Chirila Tudor Andrei
+//Problem 1
+//program that computes the area and checks if the diagonal is equal with c with a precision of 2 digits
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+//local declarations
+    int a, b, c;
+    const float eps = 0.01f;
+
+    //reading of variables from KB
+    printf("Enter three integers: ");
+    scanf("%d %d %d", &a, &b, &c); // reading of variables
+
+    //calculating area and diagonal
+    float area = (float)a * b; // area formula
+    float diag = sqrt((float)a * a + (float)b * b); // diag formula
+
+    //printing the area to terminal
+    printf("Area of rectangle: %.2f\n", area);
+
+    //checking if diagonal is equal with c
+    float difference = fabs(diag - c);
+    if (difference < eps) {
+        printf("The diagonal is equal with c.\n");
+    } else {
+        printf("The diagonal is not equal to c.\n");
+    }
+
+    return 0;
+}
+
+//Problem 2
+//program that checks if a number is a perfect square
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+//Function prototype
+int is_integer(float nmb);
+
+int main(void) {
+//local declarations
+    int a;
+    //reading integer from KB
+    printf("Enter an integer: ");
+    scanf("%d", &a);
+
+    //condition checking if number is a perfect square
+    if (a >= 0 && is_integer(sqrt(a))) {
+        printf("%d is a perfect square\n", a);
+    } else {
+        printf("%d is not a perfect square\n", a);
+    }
+
+    return 0;
+}
+
+
+//function that checks if a number is an integer
+int is_integer(float nmb) {
+    return floor(nmb) == ceil(nmb); //floor and ceil are equal for integers
+}
+
+//Problem 3
+//program that calculates a at the power of n
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int a = 5, n;
+    //reading the power n from KB
+    printf("Enter the power n: ");
+    scanf("%d", &n);
+
+    int result = 1; //result initialization
+    //loop that calculates power by repeated multiplications
+    for (int i = 0; i < n; i++) {
+        result = result * a;
+    }
+
+    //printing the result to terminal
+    printf("%d to the power of %d is %d\n", a, n, result);
+    return 0;
+}
+
+//Problem 4
+//program that calculates n factorial
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int n;
+    //reading integer from KB
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    int result = 1; //result initialization
+    //loop that multiplies numbers from 1 to n
+    for (int i = 1; i <= n; i++) {
+        result = result * i;
+    }
+
+    //printing factorial result to terminal
+    printf("%d! = %d\n", n, result);
+    return 0;
+}
+
+//Problem 5
+//program that reads a number from the KB and finds its greatest prime number and displays all the prime numbers smaller than it
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int isprime(int n); // function that checks if a number is prime
+
+int main(void) {
+//local declarations
+    int n;
+    //reading number from KB
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    //loop that takes the number in decreasing order and when it finds the first prime number it displays it and stops
+    for (int i = n - 1; i >= 2; i--) {
+        if (isprime(i)) {
+            printf("The biggest prime number smaller than %d is: %d\n", n, i);
+            break;
+        }
+    }
+
+    //loop that takes all the prime numbers smaller than the number n
+    printf("All prime numbers smaller than %d are: ", n);
+    for (int i = 2; i < n; i++) {
+        if (isprime(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+
+//Function definition
+
+//function that checks if a number is prime
+int isprime(int n) {
+    if (n < 2) { //numbers smaller than 2 are not prime
+        return 0;
+    }
+    //loop checking divisors
+    for (int d = 2; d < n; d++) {
+        if (n % d == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+//Problem 6
+//program that determines the Greatest Common Divider (GCD) of two numbers
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int gcd(int a, int b);
+
+int main(void) {
+//local declarations
+    int a, b;
+    //reading two numbers from KB
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    //printing the GCD while calling the function
+    printf("The GCD of %d and %d is: %d\n", a, b, gcd(a, b));
+    return 0;
+}
+
+//Function definition
+
+//function that determines the GCD using Euclid algorithm
+int gcd(int a, int b) {
+//local declaration
+    int r;
+    //loop for euclidean algorithm
+    while (b != 0) { // Euclid algorithm
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
+//Problem 7
+//program that determines all the divisors of a value introduced from the keyboard
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int divs(int n);
+
+int main(void) {
+//local declarations
+    int n;
+    //reading number from KB
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    //calling function to display divisors
+    divs(n); // function calling
+    return 0;
+}
+
+//Function definition
+
+//function that finds and displays all divisors of n
+int divs(int n) {
+    printf("The divisors of %d are: ", n);
+    //loop checking all numbers from 1 to n for divisibility
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    } // divisors finding
+    printf("\n");
+    return 0;
+}
+
+//Problem 8
+//Calculate the product of 2 integer numbers using additions of the first number given by the second one
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int product(int a, int b);
+
+int main(void) {
+//local declarations
+    int a, b;
+    //reading two numbers from KB
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    //printing the product while calling the function
+    printf("The product of %d and %d is: %d\n", a, b, product(a, b));
+    return 0;
+}
+
+//Function definition
+
+//function that computes product of two numbers using repeated addition
+int product(int a, int b) {
+//local declaration
+    int result = 0; //result initialization
+    //loop adding a, b times
+    for (int i = 0; i < b; i++) {
+        result += a;
+    }
+    return result;
+}
+
+//Problem 9
+//program that determines the integer quotient of 2 integer numbers introduced from the KB using a series of subtractions
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int a, b, count = 0; //count=quotient
+    //reading two numbers from KB
+    printf("Enter 2 integer numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    //subtraction loop to compute integer quotient
+    while (a >= b) {
+        a -= b;
+        count++;
+    }
+
+    //printing integer quotient to terminal
+    printf("The integer quotient is: %d\n", count);
+    return 0;
+}
+
+//Problem 10
+//program that checks the number of figures of a number read from the KB
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int n, count = 0; //count=number of figures
+    //reading number from KB
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    //if number is 0 it has 1 figure
+    if (n == 0) {
+        count = 1;
+    }
+    //loop dividing by 10 to count figures
+    while (n != 0) {
+        count++;
+        n /= 10;
+    }
+
+    //printing the number of figures to terminal
+    printf("The number of figures is: %d\n", count);
+    return 0;
+}
+
+//Problem 11
+//program that reads from the keyboard n integer numbers, displays all the odd numbers and stores them in an array
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+//local declarations
+    int n,x,c=0; //c=count of odd numbers
+    //reading the number of integers from KB
+    printf("Enter the number of integers to be read: ");
+    scanf("%d", &n);
+    int arr[n]; //array declaration
+    printf("Enter %d integers:\n", n);
+    //loop reading integers and storing odd numbers
+    for(int i = 0; i < n; i++){
+        scanf("%d", &x);   
+        if(x % 2 != 0){  //condition to be odd
+            printf("%d is odd\n", x);
+            arr[c] = x;  //every odd number found stored in a array
+            c++;
+            }
+        }
+    return 0;
+}
+
+//Problem 12
+//program that reads from the KB an int r, reads a series of real numbers until their sum is greater than r
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+//local declarations
+    int r,c=0; //c=count of numbers
+    //reading value r from KB
+    printf("Enter a value for r: ");
+    scanf("%d", &r);
+    float a,sum=0; //sum initialization
+    //loop reading real numbers until their sum is greater than r
+    while(sum<=r){
+        printf("Enter a real number: ");
+        scanf("%f", &a);
+        sum+=a;
+        c++;
+    }
+    //printing sum and count to terminal
+    printf("The sum is: %.2f\n", sum);
+    printf("The number of integers read is: %d\n", c);
+}
+
+//Problem 13
+//program that determines the Least Common Multiple (LCM) of two numbers
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int lcm(int a, int b);
+
+int main(void) {
+//local declarations
+    int a, b;
+    //reading two numbers from KB
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    //printing the LCM while calling the function
+    printf("The LCM of %d and %d is: %d\n", a, b, lcm(a, b));
+    return 0;
+}
+
+//Function definition
+
+//function that determines the LCM using GCD from Euclid algorithm
+int lcm(int a, int b) {
+//local declarations
+    int c = a, d = b, r;
+    //loop for euclidean algorithm
+    while (d != 0) { // Euclid algorithm
+        r = c % d;
+        c = d;
+        d = r;
+    }
+    return (a / c) * b; //LCM formula
+}
+
+//Problem 14
+//program that reads n numbers and shows the one that divide to 3
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(void) {
+//local declarations
+    int a, n;
+    //reading how many numbers to insert from KB
+    printf("Enter how many numbers to insert: ");
+    scanf("%d", &n);
+
+    //loop reading n numbers and checking divisibility by 3
+    for (int i = 0; i < n; i++) {
+        printf("Enter a number: ");
+        scanf("%d", &a);
+        if (a % 3 == 0) { //condition to divide by 3
+            printf("%d divides by 3\n", a);
+        }
+    }
+
+    return 0;
+}
+
+//Problem 15
+//program that reads a single character from the kb and it displays that character n times in a row on n rows
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+//local declarations
+    int n;
+    char c;
+    //read character to be displayed
+    printf("Enter a character: ");
+    scanf("%c", &c);
+    //read number for rows and columns
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("The character %c is displayed on %d rows like this: \n", c, n);
+    //nested loops to display character on n rows and n columns
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            printf(" %c ", c); 
+        }
+        printf("\n");
+    }
+    return 0;
+}

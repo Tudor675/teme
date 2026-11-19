@@ -1,0 +1,38 @@
+//Homework Chirila Tudor Andrei
+//Problem 6
+//program that determines the Greatest Common Divider (GCD) of two numbers
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototype
+int gcd(int a, int b);
+
+int main(void) {
+//local declarations
+    int a, b;
+    //reading two numbers from KB
+    printf("Enter two numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    //printing the GCD while calling the function
+    printf("The GCD of %d and %d is: %d\n", a, b, gcd(a, b));
+    return 0;
+}
+
+//Function definition
+
+//function that determines the GCD using Euclid algorithm
+int gcd(int a, int b) {
+//local declaration
+    int r;
+    //loop for euclidean algorithm
+    while (b != 0) { // Euclid algorithm
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
