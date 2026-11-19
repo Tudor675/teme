@@ -1,0 +1,2 @@
+6)GPT-6 Astra-can create models in Blender
+  Claude, Github Copilot, JetBrains AI Assistant- code generation

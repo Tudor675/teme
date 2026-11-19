@@ -1,0 +1,14 @@
+3)Calculate:
+FA+23 in base 16 is: F+2=15+2 =17=11 in base 16
+                     A+3=10+3 =13=D in base 16 => FA+23= 11D
+
+ 1101 0010+    in base 2
+ 1110 1101=
+110111111
+ 
+1176-      in base 8 
+ 723
+  53
+since 11-7 is in base 8, 11 in base 8 is 9 => 9-7=2 
+=> answer is 253
+

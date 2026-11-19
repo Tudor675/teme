@@ -1,0 +1,20 @@
+//Problem 4
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+
+int main(){
+    //local declarations
+    int a,b;
+    printf("The equation is ax+b=0\n");
+    printf("Enter value a: ");
+    scanf("%d", &a);//reading of 1 number
+    printf("Enter value b: ");
+    scanf("%d", &b);//reading of 1 number
+    float x=(float)(-b)/a;
+    printf("The solution of ax+b=0 is: %f", x);
+    return 0;
+}
+
+

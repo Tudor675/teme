@@ -1,0 +1,28 @@
+//Problem 2
+//program that calculates the equivalent series and parallel capacitance of two capacitors
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototypes
+float series(int c1, int c2);
+float paralel(int c1, int c2);
+
+int main(){
+    //local declarations
+    int c1, c2;
+    scanf("%d", &c1);
+    scanf("%d", &c2);
+    printf("%-10.4f %-10.4f\n", paralel(c1, c2), series(c1, c2));
+    return 0;
+}
+
+//Function definition
+float series(int c1, int c2){
+    return (float)(c1 * c2) / (c1 + c2); //formula
+}
+
+float paralel(int c1, int c2){
+    return (float)(c1 + c2); //formula
+}

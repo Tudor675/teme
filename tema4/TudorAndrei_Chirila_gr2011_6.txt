@@ -1,0 +1,24 @@
+//Problem6
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+    //variable declaration
+    char namea[20];
+    char nameb[20];
+    float ma,mb;
+    printf("The name of student a is %s: ", namea);
+    scanf("%s", namea);  //reading the name of a
+    printf("Enter the mark of student a: ");
+    scanf("%f", &ma);//reading the mark of a
+    printf("The name of student b is %s: ", nameb);
+    scanf("%s", nameb);//reading the name of b
+    printf("Enter the mark of student b: ");
+    scanf("%f", &mb);//reading the mark of b
+    printf("Student %20s has the mark %.2f\n", namea, ma); //final results printing
+    printf("Student %-20s has the mark %.2f\n", nameb, mb);
+    return 0;
+}
+

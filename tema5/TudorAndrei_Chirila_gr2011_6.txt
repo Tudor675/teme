@@ -1,0 +1,19 @@
+//Problem 6
+//Program that displays the value of each byte of an integer
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main( ){
+    int x;
+    printf("Enter an integer: ");
+    scanf("%d", &x);
+
+    printf("Byte 0: %u\n", (unsigned char)x);
+    printf("Byte 1: %u\n", (unsigned char)(x >> 8));
+    printf("Byte 2: %u\n", (unsigned char)(x >> 16));
+    printf("Byte 3: %u\n", (unsigned char)(x >> 24));
+
+    return 0;
+}
+

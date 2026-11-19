@@ -1,0 +1,36 @@
+//Problem 5 updated variant
+//Chirila Tudor Andrei
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+float sum(int a, int b);//sum fucntion
+float multipersum(int a, int b);//multipersum function
+
+
+int main(){
+    int c,d,e;
+    printf("Enter value 1: ");
+    scanf("%d", &c);//reading of c1
+    printf("Enter value 2: ");
+    scanf("%d", &d);//reading of c2
+    printf("What do you want to find out, resistance or capacitance(1 for resistance or 2 for capacitance): ");
+    scanf("%d", &e);
+    if(e==2)
+        printf("The series capacitance is: %-10.4f and parallel capacitance is: %-10.4f\n", multipersum(c, d), sum(c, d));
+    
+    else if(e==1){
+        printf("The series resistance is: %10.3f\n",sum(c,d));
+        printf("The parallel resistance is: %10.3f\n", multipersum(c,d));}
+    else
+        printf("Input not in range\n");
+}
+//function for sum of two numbers
+float sum(int a, int b){
+    return a+b;  
+}
+
+//function for multiplication of two numbers over their sum
+float multipersum(int a, int b){
+    return (float) (a*b)/(a+b);
+}
+

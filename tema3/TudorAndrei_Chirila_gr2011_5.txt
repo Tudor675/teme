@@ -1,0 +1,31 @@
+//Problem5
+//program that calculates the weighted sums of 3 values with weights summing 1
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main() {
+    //3 integer values
+    int val1 = 5;
+    int val2 = 10;
+    int val3 = 15;
+
+    //weights
+    float w1 = 0.2;
+    float w2 = 0.3;
+    float w3 = 0.5;
+
+
+    // Calculated weighted sum
+    float weightedSum = (val1 * w1) + (val2 * w2) + (val3 * w3);
+
+    //results
+    printf("Integer values: %d, %d, %d\n", val1, val2, val3);
+    printf("The weights: %f, %f, %f\n", w1, w2, w3);
+    printf("Weighted Sum: %f\n", weightedSum);
+
+    return 0;
+}
+
+

@@ -1,0 +1,39 @@
+//Problem 7
+//program that displays the value of 1/a + 1/b + 1/c while they are floats and then integers.
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+
+//Function prototypes
+float sumf(float a, float b, float c);
+float sumi(int ai, int bi, int ci);
+
+
+int main() {
+//local declarations
+    float a = 8.5;
+    float b = 7.25;
+    float c = 6.30;
+    int ai = 7;
+    int bi = 9;
+    int ci =10;
+    //printing the values to terminal while calling the function
+    printf("The result for float values: %f\n", sumf(a,b,c));
+    printf("The result for integer values: %f\n", sumi(ai,bi,ci));
+return 0;
+}
+//Function definition
+
+//function that computes the sum of 1/a +1/b+1/c while a,b,c are flaots
+float sumf(float a, float b, float c){
+	float fvalue = 1/a + 1/b + 1/c;    //fvalue=float value
+    return fvalue; 
+}
+
+//function that computes the sum of 1/ai +1/bi+1/ci while ai,bi,ci are integers
+float sumi(int ai, int bi, int ci){
+    float ivalue=1.0/ai + 1.0/bi + 1.0/ci;  //ivalue=integer value
+    return ivalue;
+  }

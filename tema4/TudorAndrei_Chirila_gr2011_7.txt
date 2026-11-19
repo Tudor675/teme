@@ -1,0 +1,19 @@
+//Problem7
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    //local declarations
+    int r; //r=radius
+    printf("Enter the radius of your desired circle: ");
+    scanf("%d", &r);
+    float l =(float)(2*M_PI*r); //l=length of circle formula
+    printf("Length of circle is: %10.3f\n", l);
+    float area = M_PI * r * r; //area of circle formula
+    printf("Area of circle is: %10.3f", area);
+    return 0;
+}
+

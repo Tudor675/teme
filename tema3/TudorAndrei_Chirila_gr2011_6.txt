@@ -1,0 +1,18 @@
+//Problem6
+//program that defines simbolic constants of different types
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int valueI = 250;
+    const double valueD = 2.752313131242142141;
+    const char valueC = 'A';
+
+    cout <<"Integer:" << valueI << endl;
+    cout <<"Double:" << valueD << endl;
+    cout <<"Char" << valueC << endl;
+
+    return 0;
+}
+
+

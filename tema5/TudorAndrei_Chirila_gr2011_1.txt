@@ -1,0 +1,22 @@
+//Problem 1
+//Program that computes the value of a 3rd degree polynomial in a point x
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+float pol(float a, float b, float c, float d, float x);
+
+int main( ){
+    float a, b, c, d, x;
+    printf("Enter the value of the coefficients a, b, c, d: ");
+    scanf("%f %f %f %f", &a, &b, &c, &d);
+    printf("Enter the value of x: ");
+    scanf("%f", &x);
+    printf("P(%.2f) = %.2f\n", x, pol(a, b, c, d, x));
+    return 0;
+}
+
+float pol(float a, float b, float c, float d, float x){
+    return ((a * x + b) * x + c) * x + d;
+}
+

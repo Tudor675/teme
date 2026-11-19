@@ -1,0 +1,20 @@
+//Problem 3
+//Program that prints the binary digits of an unsigned char using >> and %
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main( ){
+    unsigned char v;
+    int val, i;
+    printf("Enter an unsigned char value (0-255): ");
+    scanf("%d", &val);
+    v = val;
+    printf("Binary representation of %d: ", val);
+    for(i = 7; i >= 0; i--){
+        printf("%d", (v >> i) % 2);
+    }
+    printf("\n");
+    return 0;
+}
+

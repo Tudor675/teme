@@ -1,0 +1,41 @@
+//Problem 1 
+//program that determines the average value of 3 non-integer numbers, and 3 integer numbers
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+
+//Function prototypes
+float avf(float a, float b, float c);
+float avi(int ai, int bi, int ci);
+
+
+int main() {
+//local declarations
+    float a = 8.5;
+    float b = 7.25;
+    float c = 6.30;
+    int ai = 7;
+    int bi = 9;
+    int ci =10;
+    //printing the values to terminal while calling the function
+    printf("The average of the floats is: %f\n", avf(a,b,c));
+    printf("The average of the integers is: %f\n", avi(ai,bi,ci));
+return 0;
+}
+//Function definition
+
+//function that computes 3 fractional numbers and the result is a fractional number
+float avf(float a, float b, float c){
+	float avgf=(a+b+c)/3;  //avgf= average of floats
+    return avgf;
+}
+
+//function that computes 3 integers and the result is a fractional number
+float avi(int ai, int bi, int ci){
+	float avgi=(ai+bi+ci)/3.0;  //avgi=average of integers
+    return avgi;
+  }
+
+

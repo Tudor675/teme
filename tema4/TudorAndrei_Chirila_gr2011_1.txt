@@ -1,0 +1,34 @@
+//Problem 1
+//program that calculates the equivalent series and parallel resistance of two resistors
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+//Function prototypes
+float series(int r1, int r2);
+float paralel(int r1, int r2);
+
+int main(){
+    //local declarations
+    int r1, r2;
+    //reading resistor values 
+    scanf("%d", &r1);
+    scanf("%d", &r2);
+    //printing the values
+    printf("%10.3f\n", series(r1, r2));
+    printf("%10.3f\n", paralel(r1, r2));
+    return 0;
+}
+
+//Function definition
+
+float series(int r1, int r2){
+    return r1 + r2; //sum of resistances in series
+}
+
+float paralel(int r1, int r2){
+    return (float)(r1 * r2) / (r1 + r2); //equivalent parallel resistance formula with explicit float casting
+}
+
+

@@ -1,0 +1,2 @@
+1)Harvard: Advantage:Faster processing speed; Disadvantage: complex design with more hardware needed;Use:-microcontrollers;
+Risc: Advantage:simple instructions, fast execution; Disadvantage:requires way more instructions than Harvard and Von Neumann;Use-smartphones;

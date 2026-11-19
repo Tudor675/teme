@@ -1,0 +1,33 @@
+//Problem 3
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+//function prototypes
+float hypotenuse(int a, int b);
+float perimeter(int a, int b, float hyp);
+
+int main(){
+    //local declarations
+    int a,b;
+    printf("Enter cathether 1: ");
+    scanf("%d", &a);//reading of 1 cathether
+    printf("Enter cathether 2: ");
+    scanf("%d", &b);//reading of 1 cathether
+    float hyp = hypotenuse(a,b);
+    printf("Hypotenuse: %f\n", hyp);// hypotenuse value
+    printf("Perimeter: %f\n", perimeter(a, b, hyp));//printing of perimeter
+    return 0;
+}
+//function for hypotenuse of two numbers
+float hypotenuse(int a, int b){
+    return (float)sqrt(a*a + b*b);
+}
+
+//function for perimeter of triangle
+float perimeter(int a, int b, float hyp){
+    return a+b+hyp;
+}
+

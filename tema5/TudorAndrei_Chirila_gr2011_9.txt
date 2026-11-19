@@ -1,0 +1,22 @@
+//Problem 9
+//Program that computes the area of a circle  or of a rectangle 
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main( ){
+    int a, b;
+    float area;
+    printf("Enter 2 integer values: ");
+    scanf("%d %d", &a, &b);
+    if(a == b){
+        area = M_PI * a * a;
+        printf("Area of circle: %-10.2f\n", a, b, area);
+    }
+    else{
+        area = a * b;
+        printf("Area of rectangle: %-10.2f\n", a, b, area);
+    }
+    return 0;
+}

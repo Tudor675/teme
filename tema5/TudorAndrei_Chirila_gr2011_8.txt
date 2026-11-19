@@ -1,0 +1,19 @@
+//Problem 8
+//Program that converts lowercase characters to uppercase 
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main( ){
+    int n, i;
+    char c;
+    printf("number of characters: ");
+    scanf("%d", &n);
+    for(i = 0; i < n; i++){
+        printf("Enter a lowercase character: ");
+        scanf(" %c", &c);
+        printf("%c (arithmetic), %c (mask)\n", c - 32, c & 0xDF);
+    }
+    return 0;
+}
+

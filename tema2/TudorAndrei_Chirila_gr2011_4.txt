@@ -1,0 +1,17 @@
+4)Convert:
+10101010.110010:
+base8:010101010=252 - added 1 zero to the right
+      110010=62  
+      =>252.62
+base16:10101010=AA 
+       11001000=C8 - added 2 zeros to the right
+       =>AA.C8
+
+1100010.11101:
+base8:001100010= - added 2 zeros to the left
+      111010=72     - 1 zero to the right
+      =>142.72
+base16:01100010=62  - added 1 zero to the left
+       11101000=E8   - addded 3 zeros to the right  
+       =>62.E8
+

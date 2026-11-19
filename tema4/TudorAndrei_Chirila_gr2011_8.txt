@@ -1,0 +1,29 @@
+//Problem8
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header file used
+#include <stdio.h>
+
+int main(){
+    //local declaration
+    int hourd, minuted, houra, minutea;
+    printf("Enter departure time in this format: hour and minutes: ");
+    scanf("%d %d", &hourd, &minuted);
+    printf("Enter arrival time in this format: hour and minutes: ");
+    scanf("%d %d", &houra, &minutea);
+    int hourtravel = houra - hourd; //hour calculation
+    int minutetravel = minutea - minuted; //minutes calculation
+    if(hourd < 0 || hourd > 23 || minuted < 0 || minuted > 59 || houra < 0 || houra > 23 || minutea < 0 || minutea > 59) {
+        printf("Invalid time input(hour<24 and minute<60)");
+        return 1; 
+    }//mandatory if statement to check if the input is in real range, else it exites the program
+    if(minutetravel < 0){
+        minutetravel = minutetravel + 60;
+        hourtravel = hourtravel - 1;
+    }//minutes logic calculation
+    if(hourtravel < 0)
+        hourtravel = hourtravel + 24;//hour logic calculation
+    
+    printf("Duration of the trip is : %d hours and %d minutes", hourtravel, minutetravel);
+    return 0;
+}

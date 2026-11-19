@@ -1,0 +1,2 @@
+2)For windows Ex: C:/directory/file.txt
+  For linux: ~/directory/file

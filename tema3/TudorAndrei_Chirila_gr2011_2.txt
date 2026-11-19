@@ -1,0 +1,29 @@
+//Problem 2
+//program that determines the geometric average of 2 integers
+//preprocessor directive
+#define _CRT_SECURE_NO_WARNINGS
+//header files used
+#include <stdio.h>
+#include <math.h>
+
+
+//Function prototype
+float ga(int a, int b);
+
+
+int main() {
+	//local declarations
+    int a = 7;
+    int b = 9;
+    //printing the values to terminal while calling the function
+    printf("The geometric average is: %f\n", ga(a,b));
+return 0;
+}
+//Function definition
+
+//function that computes the geometric average of 2 integers
+float ga(int a, int b){
+	float gaf=sqrt(a*b);    //gaf=geometric average float
+    return gaf;
+  }
+
