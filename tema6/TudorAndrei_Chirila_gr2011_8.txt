@@ -9,7 +9,7 @@
 //Function prototype
 int product(int a, int b);
 
-int main(void) {
+int main() {
 //local declarations
     int a, b;
     //reading two numbers from KB

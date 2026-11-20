@@ -6,7 +6,7 @@
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a = 5, n;
     //reading the power n from KB

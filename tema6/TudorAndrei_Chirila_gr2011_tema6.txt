@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a, b, c;
     const float eps = 0.01f;
@@ -45,7 +45,7 @@ int main(void) {
 //Function prototype
 int is_integer(float nmb);
 
-int main(void) {
+int main() {
 //local declarations
     int a;
     //reading integer from KB
@@ -75,7 +75,7 @@ int is_integer(float nmb) {
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a = 5, n;
     //reading the power n from KB
@@ -100,7 +100,7 @@ int main(void) {
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int n;
     //reading integer from KB
@@ -128,7 +128,7 @@ int main(void) {
 //Function prototype
 int isprime(int n); // function that checks if a number is prime
 
-int main(void) {
+int main() {
 //local declarations
     int n;
     //reading number from KB
@@ -159,7 +159,7 @@ int main(void) {
 
 //function that checks if a number is prime
 int isprime(int n) {
-    if (n < 2) { //numbers smaller than 2 are not prime
+    if (n < 2) { 
         return 0;
     }
     //loop checking divisors
@@ -181,7 +181,7 @@ int isprime(int n) {
 //Function prototype
 int gcd(int a, int b);
 
-int main(void) {
+int main() {
 //local declarations
     int a, b;
     //reading two numbers from KB
@@ -219,7 +219,7 @@ int gcd(int a, int b) {
 //Function prototype
 int divs(int n);
 
-int main(void) {
+int main() {
 //local declarations
     int n;
     //reading number from KB
@@ -256,7 +256,7 @@ int divs(int n) {
 //Function prototype
 int product(int a, int b);
 
-int main(void) {
+int main() {
 //local declarations
     int a, b;
     //reading two numbers from KB
@@ -274,7 +274,7 @@ int main(void) {
 //function that computes product of two numbers using repeated addition
 int product(int a, int b) {
 //local declaration
-    int result = 0; //result initialization
+    int result = 0; 
     //loop adding a, b times
     for (int i = 0; i < b; i++) {
         result += a;
@@ -289,7 +289,7 @@ int product(int a, int b) {
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a, b, count = 0; //count=quotient
     //reading two numbers from KB
@@ -315,7 +315,7 @@ int main(void) {
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int n, count = 0; //count=number of figures
     //reading number from KB
@@ -400,7 +400,7 @@ int main(){
 //Function prototype
 int lcm(int a, int b);
 
-int main(void) {
+int main() {
 //local declarations
     int a, b;
     //reading two numbers from KB
@@ -419,7 +419,6 @@ int main(void) {
 int lcm(int a, int b) {
 //local declarations
     int c = a, d = b, r;
-    //loop for euclidean algorithm
     while (d != 0) { // Euclid algorithm
         r = c % d;
         c = d;
@@ -435,7 +434,7 @@ int lcm(int a, int b) {
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a, n;
     //reading how many numbers to insert from KB
@@ -471,8 +470,7 @@ int main(){
     //read number for rows and columns
     printf("Enter a number: ");
     scanf("%d", &n);
-    printf("The character %c is displayed on %d rows like this: \n", c, n);
-    //nested loops to display character on n rows and n columns
+    printf("The character %c is displayed on %d rows and columns: \n", c, n);
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             printf(" %c ", c); 

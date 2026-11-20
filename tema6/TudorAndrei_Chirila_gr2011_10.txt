@@ -6,7 +6,7 @@
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int n, count = 0; //count=number of figures
     //reading number from KB

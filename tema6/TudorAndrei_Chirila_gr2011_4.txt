@@ -6,7 +6,7 @@
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int n;
     //reading integer from KB

@@ -9,7 +9,7 @@
 //Function prototype
 int isprime(int n); // function that checks if a number is prime
 
-int main(void) {
+int main() {
 //local declarations
     int n;
     //reading number from KB

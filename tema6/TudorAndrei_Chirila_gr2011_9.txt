@@ -6,7 +6,7 @@
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a, b, count = 0; //count=quotient
     //reading two numbers from KB

@@ -6,7 +6,7 @@
 //header file used
 #include <stdio.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a, n;
     //reading how many numbers to insert from KB

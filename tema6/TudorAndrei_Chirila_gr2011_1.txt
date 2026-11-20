@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(void) {
+int main() {
 //local declarations
     int a, b, c;
     const float eps = 0.01f;
